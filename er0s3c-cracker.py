@@ -54,13 +54,13 @@ def md5_sifrele(metin):
 
 def md5_sifre_kir(hash_degeri, wordlist):
     """Wordlist kullanarak MD5 hash değerini çözer."""
-    start_time = time.time()  # Kırma işlemine başlamadan önce zamanı kaydet
+    start_time = time.time()  
 
     with open(wordlist, 'r', encoding='utf-8') as dosya:
         for satir in dosya:
             satir = satir.strip()
             if md5_sifrele(satir) == hash_degeri:
-                end_time = time.time()  # Kırma işlemi tamamlandığında zamanı kaydet
+                end_time = time.time()  
                 kirma_suresi = end_time - start_time
                 return satir, kirma_suresi
     
